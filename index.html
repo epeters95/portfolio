@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Play:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Play:wght@400;700&family=Saira:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&family=Nunito&family=Play:wght@400;700&family=Saira:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&family=Monda:wght@400..700&family=Nunito&family=Play:wght@400;700&family=Saira:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&family=Monda:wght@400..700&family=Nunito&family=Play:wght@400;700&family=Saira:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&family=Montserrat:wght@400;900&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+/*        h1, h2 { font-family: 'Saira', sans-serif; }*/
+/*        h1, h2 { font-family: 'Play', sans-serif; }*/
+/*        h1, h2 { font-family: 'Teko', sans-serif; }*/
+/*        h1, h2 { font-family: 'Mina', sans-serif; }*/
+/*        h1, h2 { font-family: 'Monda', sans-serif; }*/
+        h1, h2, a { font-family: 'Ubuntu', sans-serif; }
+        .scrollable-content { overflow-y: auto; padding-right: 10px; background-color: rgba(0, 0, 0, 0.3); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #444; }
+        ::-webkit-scrollbar-thumb { background: #14b8a6; border-radius: 10px; }
+        .hover-effect {
+            transition: background-color 0.6s ease-out;
+        }
+        .hover-effect:hover {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+        }
+        .menu {
+            z-index: 0;
+            width: 112%;
+            height: 100%;
+            overflow-y: hidden;
+        }
+        .menu-rows {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 90%;
+            .row {
+                z-index: 100;
+                overflow: visible;
+                width: 100%;
+                height: 65px;
+                border-right: 3px groove cyan;
+                background-color: rgba(0, 0, 0, 0.7);
+                align-self: stretch;
+                transition: margin-left 0.4s ease-out;
+            }
+            .row > * {
+                position: fixed;
+                left: 8px;
+            }
+            .row.selected, .row:hover {
+                margin-left: 10px;
+            }
+            .profile
+                z-index: 200;
+                img {
+                    position: fixed;
+                    margin: 12px;
+                    left: 8px;
+                }
+            }
+        }
+    </style>
+
+</head>
+<body class="bg-gradient-to-bl from-gray-900 via-gray-700 to-black text-white h-screen flex">
+    <!-- Sidebar -->
+    <div class="w-1/4 flex flex-col items-start space-y-8 rounded-r-3xl shadow-2xl">
+        <div class="menu">
+            <div class="menu-rows" id="menu-rows">
+                <div class="row">
+                </div>
+                <div class="row profile">
+                    <img src="profile.jpg" alt="Profile Image" class="w-28 h-28 rounded-full border-4 border-cyan-200 shadow-xl self-start transform hover:scale-110 transition duration-300">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                    <h1 class="text-5xl font-bold text-cyan-100 tracking-widest">Erik Peterson</h1>
+                </div>
+                <div class="row">
+                    <a href="#" class="block bg-cyan-200 hover:bg-cyan-100 px-8 py-2 text-black transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project One</a>
+                </div>
+                <div class="row">
+                    <a href="#" class="block bg-cyan-200 hover:bg-cyan-100 px-8 py-2 text-black transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project Two</a>
+                </div>
+                <div class="row">
+                    <a href="#" class="block bg-cyan-200 hover:bg-cyan-100 px-8 py-2 text-black transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project Three</a>
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="flex-1 p-16 h-screen flex justify-center scrollable-content">
+        <div class="bg-white h-fit p-12 shadow-2xl border border-cyan-200 max-w-4xl w-full text-left hover-effect" style="background-color: rgba(255, 255, 255, 0.9)">
+            <h2 class="text-4xl font-bold text-black border-b-2 border-cyan-200 pb-4">Welcome</h2>
+            <p class="text-black mt-6 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare. Nullam sit amet magna vel velit imperdiet consectetur a ac purus. Vivamus hendrerit nisi non sem bibendum, sed interdum purus efficitur. Fusce a turpis id eros sodales ultricies. Integer et tellus vehicula, feugiat elit vel, ullamcorper augue. Vestibulum vulputate diam in elit lacinia volutpat. Donec eget diam non justo lacinia efficitur. Sed in ante sed mauris gravida consequat. Phasellus a lacus magna. Nulla ac magna vitae ligula fringilla elementum. Suspendisse a bibendum elit, eget auctor arcu. Nam congue neque a turpis fringilla, sed fermentum nisi congue. Duis et felis in mauris suscipit dignissim.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Curabitur nec eros felis. Ut ut ex non mi tincidunt condimentum. Cras vitae aliquet lacus. Mauris vitae dui sed lectus suscipit luctus non sit amet ex. Nulla facilisi. Donec nec justo at dolor facilisis vehicula nec a lorem. Aliquam erat volutpat. Donec non felis a dolor ullamcorper sollicitudin. Integer ac urna quis ipsum venenatis vulputate.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Morbi hendrerit felis ac nunc luctus, a tristique turpis sagittis. Aliquam erat volutpat. Nullam eget risus feugiat, malesuada quam sed, bibendum elit. Aenean feugiat, odio ut dapibus volutpat, metus augue tristique arcu, et gravida nisi elit vel est.</p>
+            <h2 class="text-4xl font-bold text-black border-b-2 border-cyan-200 pb-4">Welcome</h2>
+            <p class="text-black mt-6 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare. Nullam sit amet magna vel velit imperdiet consectetur a ac purus. Vivamus hendrerit nisi non sem bibendum, sed interdum purus efficitur. Fusce a turpis id eros sodales ultricies. Integer et tellus vehicula, feugiat elit vel, ullamcorper augue. Vestibulum vulputate diam in elit lacinia volutpat. Donec eget diam non justo lacinia efficitur. Sed in ante sed mauris gravida consequat. Phasellus a lacus magna. Nulla ac magna vitae ligula fringilla elementum. Suspendisse a bibendum elit, eget auctor arcu. Nam congue neque a turpis fringilla, sed fermentum nisi congue. Duis et felis in mauris suscipit dignissim.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Curabitur nec eros felis. Ut ut ex non mi tincidunt condimentum. Cras vitae aliquet lacus. Mauris vitae dui sed lectus suscipit luctus non sit amet ex. Nulla facilisi. Donec nec justo at dolor facilisis vehicula nec a lorem. Aliquam erat volutpat. Donec non felis a dolor ullamcorper sollicitudin. Integer ac urna quis ipsum venenatis vulputate.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Morbi hendrerit felis ac nunc luctus, a tristique turpis sagittis. Aliquam erat volutpat. Nullam eget risus feugiat, malesuada quam sed, bibendum elit. Aenean feugiat, odio ut dapibus volutpat, metus augue tristique arcu, et gravida nisi elit vel est.</p>
+            <h2 class="text-4xl font-bold text-black border-b-2 border-cyan-200 pb-4">Welcome</h2>
+            <p class="text-black mt-6 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare. Nullam sit amet magna vel velit imperdiet consectetur a ac purus. Vivamus hendrerit nisi non sem bibendum, sed interdum purus efficitur. Fusce a turpis id eros sodales ultricies. Integer et tellus vehicula, feugiat elit vel, ullamcorper augue. Vestibulum vulputate diam in elit lacinia volutpat. Donec eget diam non justo lacinia efficitur. Sed in ante sed mauris gravida consequat. Phasellus a lacus magna. Nulla ac magna vitae ligula fringilla elementum. Suspendisse a bibendum elit, eget auctor arcu. Nam congue neque a turpis fringilla, sed fermentum nisi congue. Duis et felis in mauris suscipit dignissim.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Curabitur nec eros felis. Ut ut ex non mi tincidunt condimentum. Cras vitae aliquet lacus. Mauris vitae dui sed lectus suscipit luctus non sit amet ex. Nulla facilisi. Donec nec justo at dolor facilisis vehicula nec a lorem. Aliquam erat volutpat. Donec non felis a dolor ullamcorper sollicitudin. Integer ac urna quis ipsum venenatis vulputate.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Morbi hendrerit felis ac nunc luctus, a tristique turpis sagittis. Aliquam erat volutpat. Nullam eget risus feugiat, malesuada quam sed, bibendum elit. Aenean feugiat, odio ut dapibus volutpat, metus augue tristique arcu, et gravida nisi elit vel est.</p>
+            <h2 class="text-4xl font-bold text-black border-b-2 border-cyan-200 pb-4">Welcome</h2>
+            <p class="text-black mt-6 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare. Nullam sit amet magna vel velit imperdiet consectetur a ac purus. Vivamus hendrerit nisi non sem bibendum, sed interdum purus efficitur. Fusce a turpis id eros sodales ultricies. Integer et tellus vehicula, feugiat elit vel, ullamcorper augue. Vestibulum vulputate diam in elit lacinia volutpat. Donec eget diam non justo lacinia efficitur. Sed in ante sed mauris gravida consequat. Phasellus a lacus magna. Nulla ac magna vitae ligula fringilla elementum. Suspendisse a bibendum elit, eget auctor arcu. Nam congue neque a turpis fringilla, sed fermentum nisi congue. Duis et felis in mauris suscipit dignissim.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Curabitur nec eros felis. Ut ut ex non mi tincidunt condimentum. Cras vitae aliquet lacus. Mauris vitae dui sed lectus suscipit luctus non sit amet ex. Nulla facilisi. Donec nec justo at dolor facilisis vehicula nec a lorem. Aliquam erat volutpat. Donec non felis a dolor ullamcorper sollicitudin. Integer ac urna quis ipsum venenatis vulputate.</p>
+            <p class="text-black mt-6 text-lg leading-relaxed">Morbi hendrerit felis ac nunc luctus, a tristique turpis sagittis. Aliquam erat volutpat. Nullam eget risus feugiat, malesuada quam sed, bibendum elit. Aenean feugiat, odio ut dapibus volutpat, metus augue tristique arcu, et gravida nisi elit vel est.</p>
+        </div>
+    </div>
+</body>
+<script defer>
+        let rows = document.getElementById("menu-rows").children
+
+        let selectedIdx = 0;
+        let maximum = rows.length;
+
+        const selectRow = function(row) {
+            row.classList.add("selected")
+        }
+        // rows.forEach((row) => {
+        // })
+
+        const iterateSelectionTo = function(max, iterator=1, returnCallback=null) {
+
+            if (selectedIdx === max) {
+                if (returnCallback !== null) {
+                    returnCallback()
+                }
+                return;
+            } else {
+                let oldIdx = selectedIdx
+                selectRow(rows[selectedIdx])
+
+
+                // Move down gradually
+                selectedIdx += iterator;
+                setTimeout(function(max) {
+                    
+                    iterateSelectionTo(max, iterator, returnCallback)
+                }, 50, max);
+                setTimeout(function() {
+                    rows[oldIdx].classList.remove("selected")
+                }, 400)
+            }
+
+        }
+
+
+                // Walk down
+        const setLoop = function() {
+
+            setTimeout(iterateSelectionTo, 200, maximum, 1, function() {
+                
+                // selectedIdx = 0;
+                // setLoop()       
+
+            })
+        }
+        setLoop()
+        //     selectedIdx = maximum - 1;
+
+        // // Walk up
+        //     setTimeout(iterateSelectionTo, 300, 0, -1);
+    </script>
+</html>
