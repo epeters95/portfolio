@@ -2,7 +2,6 @@
   var FrameTest = root.FrameTest = (root.FrameTest || {});
 
   var Frame = FrameTest.Frame;
-  var Slider = FrameTest.Slider;
 
   const canvasHeight = 1080;
   const canvasWidth = 1920;
@@ -38,7 +37,6 @@
 
       this.holding         = false;
       this.clearBackground = false;
-      this.showSliders     = false;
       this.useHueConfig    = false;
       this.useInvert       = false;
       this.useSigmoid      = false;
@@ -86,32 +84,7 @@
           this.modifyHsv = modifyHsvConfig.checked;
         })
       }
-
-      const sliderStart = 0;
-      const sliderLength = 860;
-      const sliderX = this.centerX - Math.floor(sliderLength / 2);
-      const sliderY = 0;
-
-      this.slider = new Slider(
-        this.canvas,
-        sliderX,
-        sliderY,
-        sliderStart,
-        sliderLength,
-
-        (ratio) => { 
-          
-          if (this.configOptions["huePeriod"] === true) {
-            this.huePeriod = Math.PI * 2 * ratio
-          }
-
-          if (this.configOptions["pointD"] === true) {
-            this.dPointPosition = ratio
-          }
-        })
-
-
-
+      
       this.canvas.addEventListener('mousedown', () => {
         this.holding = true;
       })
@@ -171,7 +144,7 @@
         this.ctx.fillRect(0, 0, this.frameWidth, this.frameHeight);
       }
 
-      if (!this.slider.held && this.holding) {
+      if (this.holding) {
         let diagonal = Math.hypot(this.frameWidth / 2, this.frameWidth / 2);
         let x = this.centerX - this.mouseXY[0];
         let y = this.centerY - this.mouseXY[1];
@@ -181,7 +154,7 @@
         this.deltaTheta = this.idleDelta / 2;
       }
 
-      if (this.slider.held || !this.holding) {
+      else {
         this.deltaTheta = this.idleDelta;
 
         if (this.shrinkFactor >= 1 && this.shrinkInc < 0 ||
@@ -205,15 +178,6 @@
     step() {
       
       this.draw();
-
-      if (this.showSliders) {
-        // Clear slider area
-        this.ctx.clearRect(0, 0, this.frameWidth, this.slider.height);
-        this.ctx.fillStyle = this.bgColor;
-        this.ctx.fillRect(0, 0, this.frameWidth, this.slider.height);
-        
-        this.slider.draw();
-      }
     }
   }
 
