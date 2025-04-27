@@ -6,6 +6,7 @@
     <title>Portfolio - Full Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="./frame.js"></script>
+    <script defer src="./slider.js"></script>
     <script defer src="./display.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +28,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&family=Monda:wght@400..700&family=Nunito&family=Play:wght@400;700&family=Saira:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&family=Montserrat:wght@400;900&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
-/*        h1, h2 { font-family: 'Saira', sans-serif; }*/
-/*        h1, h2 { font-family: 'Play', sans-serif; }*/
-/*        h1, h2 { font-family: 'Teko', sans-serif; }*/
-/*        h1, h2 { font-family: 'Mina', sans-serif; }*/
-/*        h1, h2 { font-family: 'Monda', sans-serif; }*/
         h1, h2, a { font-family: 'Ubuntu', sans-serif; }
         .scrollable-content { overflow-y: auto; padding-right: 10px; background-color: rgba(0, 0, 0, 0.3); }
         ::-webkit-scrollbar { width: 8px; }
@@ -164,11 +159,11 @@
         let selectedIdx = 0;
         let maximum = rows.length;
 
+        let walkUpPreview = false;
+
         const selectRow = function(row) {
             row.classList.add("selected")
         }
-        // rows.forEach((row) => {
-        // })
 
         const iterateSelectionTo = function(max, iterator=1, returnCallback=null) {
 
@@ -196,7 +191,7 @@
         }
 
 
-                // Walk down
+        // Walk down
         const setLoop = function() {
 
             setTimeout(iterateSelectionTo, 200, maximum, 1, function() {
@@ -207,9 +202,11 @@
             })
         }
         setLoop()
-        //     selectedIdx = maximum - 1;
 
-        // // Walk up
-        //     setTimeout(iterateSelectionTo, 300, 0, -1);
+        // Walk up
+        if (walkUpPreview) {
+            selectedIdx = maximum - 1;
+            setTimeout(iterateSelectionTo, 300, 0, -1);
+        }
     </script>
 </html>
