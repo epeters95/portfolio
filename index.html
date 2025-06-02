@@ -50,6 +50,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            margin-left: -10px;
             width: 90%;
             .row {
                 z-index: 100;
@@ -68,9 +69,10 @@
             .row.selected, .row:hover {
                 margin-left: 10px;
             }
-            .profile
-                z-index: 200;
+            .row.profile {
+                z-index: 300;
                 img {
+                    z-index: 300;
                     position: fixed;
                     margin: 12px;
                     left: 8px;
