@@ -62,6 +62,15 @@
                 align-self: stretch;
                 transition: margin-left 0.4s ease-out;
             }
+            .row a {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transition: background-color 0.3s ease-out;
+            }
+            .row a:hover {
+                background-color: rgba(150, 150, 150, 0.6);
+            }
             .row > * {
                 position: fixed;
                 left: 8px;
@@ -78,6 +87,9 @@
                     left: 8px;
                 }
             }
+        }
+        .shift-left {
+            margin-left: -10px;
         }
     </style>
 
@@ -98,13 +110,13 @@
                     <h1 class="text-5xl font-bold text-cyan-100 tracking-widest">Erik Peterson</h1>
                 </div>
                 <div class="row">
-                    <a href="#" class="block bg-cyan-200 hover:bg-cyan-100 px-8 py-2 text-black transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project One</a>
+                    <a href="#" class="block px-8 py-2 transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project One</a>
                 </div>
                 <div class="row">
-                    <a href="#" class="block bg-cyan-200 hover:bg-cyan-100 px-8 py-2 text-black transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project Two</a>
+                    <a href="#" class="block px-8 py-2 transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project Two</a>
                 </div>
                 <div class="row">
-                    <a href="#" class="block bg-cyan-200 hover:bg-cyan-100 px-8 py-2 text-black transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project Three</a>
+                    <a href="#" class="block px-8 py-2 transition-all duration-300 shadow-md text-2xl tracking-widest text-center">Project Three</a>
                 </div>
                 <div class="row">
                 </div>
@@ -131,7 +143,7 @@
     </div>
     
     <!-- Main Content -->
-    <div class="flex-1 p-16 h-screen flex justify-center scrollable-content">
+    <div class="flex-1 p-16 h-screen flex justify-center scrollable-content shift-left">
         <div class="bg-white h-fit p-12 shadow-2xl border border-cyan-200 max-w-4xl w-full text-left hover-effect" style="background-color: rgba(255, 255, 255, 0.9)">
             <h2 class="text-4xl font-bold text-black border-b-2 border-cyan-200 pb-4">Welcome</h2>
             <p class="text-black mt-6 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare. Nullam sit amet magna vel velit imperdiet consectetur a ac purus. Vivamus hendrerit nisi non sem bibendum, sed interdum purus efficitur. Fusce a turpis id eros sodales ultricies. Integer et tellus vehicula, feugiat elit vel, ullamcorper augue. Vestibulum vulputate diam in elit lacinia volutpat. Donec eget diam non justo lacinia efficitur. Sed in ante sed mauris gravida consequat. Phasellus a lacus magna. Nulla ac magna vitae ligula fringilla elementum. Suspendisse a bibendum elit, eget auctor arcu. Nam congue neque a turpis fringilla, sed fermentum nisi congue. Duis et felis in mauris suscipit dignissim.</p>
